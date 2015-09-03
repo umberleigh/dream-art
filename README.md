@@ -9,28 +9,42 @@ the DeepDream content image with the style applied.
 See [the gallery](/gallery.md) for more examples.
 
 # Tubingen
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/tubingen.jpg" height="400px">
+## Original
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/tubingen.jpg">
 
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/tubingen_escher_deepdream.png" height="200px">
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/escher_sphere.jpg" height="200px">
+## DeepDream
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/tubingen_deepdream.png">
 
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/tubingen_escher.png" height="500px">
+## Escher's "Hand with Reflecting Sphere"
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/escher_sphere.jpg">
+
+## DeepDream with Escher's Style
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/tubingen_escher.png">
 
 # Golden Gate
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/golden_gate.jpg" height="300px">
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/golden_gate_escher_deepdream.png" height="300px">
+## Original
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/golden_gate.jpg">
 
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/escher_sphere.jpg" height="300px">
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/golden_gate_escher.png" height="500px">
+## DeepDream
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/golden_gate_deepdream.png">
 
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/frida_kahlo.jpg" height="300px">
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/golden_gate_kahlo.png" height="500px">
+## Kahlo's Self Portrait
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/frida_kahlo.jpg">
+
+## DeepDream with Kahlo's Style
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/golden_gate_kahlo.png">
 
 # Brad Pitt
+## Original
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/brad_pitt.jpg">
 
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/brad_pitt.jpg" height="300px">
-
+## DeepDream
 TODO
+
+## TODO
+TODO
+
+## DeepDream with TODO
 
 # How can I use this on my images without downloading anything?
 
