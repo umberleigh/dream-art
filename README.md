@@ -7,12 +7,14 @@ The following examples were created with [create-outputs.sh](/create-outputs.sh)
 and show an input content image followed by the DeepDream content image,
 and then pairs of input artistic styles and
 the DeepDream content image with the style applied.
+See [the gallery](/gallery.md) for more examples.
 
 # Tubingen
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/tubingen.jpg" height="300px">
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/tubingen_escher_deepdream.png" height="300px">
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/tubingen.jpg" height="400px">
 
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/escher_sphere.jpg" height="300px">
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/tubingen_escher_deepdream.png" height="200px">
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/escher_sphere.jpg" height="200px">
+
 <img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/tubingen_escher.png" height="500px">
 
 # Golden Gate
@@ -25,6 +27,9 @@ the DeepDream content image with the style applied.
 <img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/frida_kahlo.jpg" height="300px">
 <img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/golden_gate_kahlo.png" height="500px">
 
+# Brad Pitt
+
+TODO
 
 # How can I use this on my images without downloading anything?
 
