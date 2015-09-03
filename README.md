@@ -55,7 +55,7 @@ This repository lowers the barrier by combining
 [neural-style][neural-style] into a single command-line Torch
 application that shares the same model and runs on the CPU and GPU.
 
-Ideally, both of these implementations should ship on [luarocks][https://luarocks.org]
+Ideally, both of these implementations should ship on [luarocks](https://luarocks.org)
 and provide a command-line interface and library.
 When they do, this repository will be obsolete, but until then,
 this repository glues them together.
