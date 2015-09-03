@@ -1,7 +1,6 @@
 # Dream Art
 
-Dream Art is a short [torch](http://torch.ch) program that combines
-[inceptionism/DeepDream][inceptionism] with
+Dream Art combines [inceptionism/DeepDream][inceptionism] with
 "[A Neural Algorithm of Artistic Style][neural-art-arxiv]."
 The following examples were created with [create-outputs.sh](/create-outputs.sh)
 and show an input content image followed by the DeepDream content image,
