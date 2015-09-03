@@ -10,10 +10,10 @@ the DeepDream content image with the style applied.
 
 # Tubingen
 <img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/tubingen.jpg" height="300px">
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/tubingen_escher_deepdream.jpg" height="300px">
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/tubingen_escher_deepdream.png" height="300px">
 
 <img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/escher_sphere.jpg" height="300px">
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/tubingen_escher.jpg" height="500px">
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/tubingen_escher.png" height="500px">
 
 # Golden Gate
 <img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/golden_gate.jpg" height="300px">
