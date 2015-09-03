@@ -19,7 +19,7 @@ See [the gallery](/gallery.md) for more examples.
 <img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/escher_sphere.jpg">
 
 ## DeepDream with Escher's Style
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/tubingen_escher.png">
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/tubingen_escher_deepdream.png">
 
 # Golden Gate
 ## Original
@@ -32,7 +32,7 @@ See [the gallery](/gallery.md) for more examples.
 <img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/frida_kahlo.jpg">
 
 ## DeepDream with Kahlo's Style
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/golden_gate_kahlo.png">
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/golden_gate_kahlo_deepdream.png">
 
 # Brad Pitt
 ## Original
