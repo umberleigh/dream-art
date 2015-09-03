@@ -1,3 +1,4 @@
+#!/bin/bash
 # Original by @jcjohnson at https://github.com/jcjohnson/neural-style.
 # Modifications by @bamos at https://github.com/bamos/dream-art.
 # Both licensed under the MIT license.
