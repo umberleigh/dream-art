@@ -10,36 +10,36 @@ See [the gallery](/gallery.md) for more examples.
 
 # Tubingen
 ## Original
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/tubingen.jpg">
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/tubingen.jpg" height="300px">
 
 ## DeepDream
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/tubingen_deepdream.png">
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/tubingen_deepdream.png" height="300px">
 
 ## Escher's "Hand with Reflecting Sphere"
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/escher_sphere.jpg">
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/escher_sphere.jpg" height="300px">
 
 ## DeepDream with Escher's Style
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/tubingen_escher_deepdream.png">
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/tubingen_escher_deepdream.png" height="300px">
 
 # Golden Gate
 ## Original
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/golden_gate.jpg">
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/golden_gate.jpg" height="300px">
 
 ## DeepDream
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/golden_gate_deepdream.png">
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/golden_gate_deepdream.png" height="300px">
 
 ## Kahlo's Self Portrait
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/frida_kahlo.jpg">
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/frida_kahlo.jpg" height="300px">
 
 ## DeepDream with Kahlo's Style
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/golden_gate_kahlo_deepdream.png">
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/golden_gate_kahlo_deepdream.png" height="300px">
 
 # Brad Pitt
 ## Original
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/brad_pitt.jpg">
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/brad_pitt.jpg" height=300px>
 
 ## DeepDream
-TODO
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/brad_pitt_deepdream.jpg" height=300px>
 
 ## TODO
 TODO
