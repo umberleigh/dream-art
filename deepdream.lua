@@ -23,7 +23,7 @@ cmd:option('-gpu', 0, 'Zero-indexed ID of the GPU to use; for CPU mode set -gpu 
 
 -- DeepDream options
 cmd:option('-num_iter', 100)
-cmd:option('-num_octave', 8)
+cmd:option('-num_octave', 5)
 cmd:option('-octave_scale', 1.4)
 cmd:option('-end_layer', 32)
 cmd:option('-clip', true)
