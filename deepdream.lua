@@ -1,5 +1,6 @@
 -- Original by @eladhoffer at https://github.com/eladhoffer/DeepDream.torch.
 -- Modifications by @bamos at https://github.com/bamos/dream-art.
+-- Both licensed under the MIT license.
 
 local Normalization = {mean = 118.380948/255, std = 61.896913/255}
 

@@ -161,7 +161,7 @@ Modifications remain under the original license.
 
 | Project | Modified | License |
 |---|---|---|
-| [DeepDream.torch] | Yes | [Pending](https://github.com/eladhoffer/DeepDream.torch/issues/3) |
+| [DeepDream.torch] | Yes | MIT
 | [jcjohnson/neural-style][neural-style] | Yes | MIT
 
 
