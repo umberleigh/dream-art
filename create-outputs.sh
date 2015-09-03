@@ -19,14 +19,14 @@ produceOutputs() {
     -backend cudnn \
     -content_image examples/inputs/$1.jpg \
     -output_image examples/outputs/$1_deepdream.png
-  produceOutput escher_sphere $1_deepdream.png $1_escher
-  produceOutput frida_kahlo $1_deepdream.png $1_kahlo
-  produceOutput woman-with-hat-matisse $1_deepdream.png $1_matisse
-  produceOutput picasso_selfport1907 $1_deepdream.png $1_picasso
-  produceOutput the_scream $1_deepdream.png $1_scream
-  produceOutput seated-nude $1_deepdream.png $1_seated
-  produceOutput shipwreck $1_deepdream.png $1_shipwreck
-  produceOutput starry_night $1_deepdream.png $1_starry
+  produceStyle escher_sphere $1_deepdream.png $1_escher
+  produceStyle frida_kahlo $1_deepdream.png $1_kahlo
+  produceStyle woman-with-hat-matisse $1_deepdream.png $1_matisse
+  produceStyle picasso_selfport1907 $1_deepdream.png $1_picasso
+  produceStyle the_scream $1_deepdream.png $1_scream
+  produceStyle seated-nude $1_deepdream.png $1_seated
+  produceStyle shipwreck $1_deepdream.png $1_shipwreck
+  produceStyle starry_night $1_deepdream.png $1_starry
 }
 
 produceOutputs golden_gate
