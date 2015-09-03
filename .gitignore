@@ -1,0 +1,2 @@
+models/*.caffemodel
+models/*.prototxt*
