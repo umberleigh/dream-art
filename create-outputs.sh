@@ -26,3 +26,4 @@ produceOutputs() {
 
 produceOutputs golden_gate
 produceOutputs tubingen
+produceOutputs brad_pitt
