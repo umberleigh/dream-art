@@ -3,13 +3,17 @@
 Dream Art is a short [torch](http://torch.ch) program that combines
 [inceptionism/DeepDream][inceptionism] with
 "[A Neural Algorithm of Artistic Style][neural-art-arxiv]."
-The following examples were created with [create-outputs.sh](/create-outputs.sh).
+The following examples were created with [create-outputs.sh](/create-outputs.sh)
+and show an input content image, followed by
+1) an input artistic style,
+2) the DeepDream content image, and
+3) the DeepDream content image with the style applied.
 
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/golden_gate.jpg" height="200px">
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/golden_gate.jpg" height="300px">
 
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/escher_sphere.jpg" height="160px">
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/golden_gate_escher_deepdream.png" height="160px">
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/golden_gate_escher.png" height="160px">
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/escher_sphere.jpg" height="300px">
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/golden_gate_escher_deepdream.png" height="300px">
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/golden_gate_escher.png" height="500px">
 
 # How can I use this on my images without downloading anything?
 
