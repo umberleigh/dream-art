@@ -39,7 +39,7 @@ See [the gallery](/gallery.md) for more examples.
 <img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/brad_pitt.jpg" height=300px>
 
 ## DeepDream
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/brad_pitt_deepdream.jpg" height=300px>
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/brad_pitt_deepdream.png" height=300px>
 
 ## TODO
 TODO
