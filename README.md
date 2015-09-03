@@ -29,6 +29,8 @@ See [the gallery](/gallery.md) for more examples.
 
 # Brad Pitt
 
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/brad_pitt.jpg" height="300px">
+
 TODO
 
 # How can I use this on my images without downloading anything?
@@ -72,11 +74,12 @@ Nontrivial toolchains and system configuration make the barrier to
 running current implementations high.
 This repository lowers the barrier by combining
 [DeepDream.torch][DeepDream.torch] with
-[neural-style][neural-style] into a single command-line Torch
-application that shares the same model and runs on the CPU and GPU.
+[neural-style][neural-style] into Torch applications application that share the
+same model and run on the CPU and GPU.
 
 Ideally, both of these implementations should ship on [luarocks](https://luarocks.org)
-and provide a command-line interface and library.
+and provide a command-line interface and library that
+nicely load the models.
 When they do, this repository will be obsolete, but until then,
 this repository glues them together.
 
@@ -113,38 +116,48 @@ By default the original VGG-19 model is used.
 
 # Usage
 
-See `th main.lua -help` for the most updated docs:
+See `th deepdream.lua -help` and `th neural-style.lua -help` for the most updated docs.
 
 ```
-Usage: /home/bamos/torch/install/lib/luarocks/rocks/trepl/scm-1/bin/th [options]
-  -style_image            Style target image [examples/inputs/seated-nude.jpg]
-  -content_image          Content target image [examples/inputs/tubingen.jpg]
-  -image_size             Maximum height / width of generated image [512]
-  -gpu                    Zero-indexed ID of the GPU to use; for CPU mode set -gpu = -1 [0]
-  -content_weight         [5]
-  -style_weight           [100]
-  -tv_weight              [0.001]
-  -num_iterations         [1000]
-  -init                   random|image [random]
-  -print_iter             [50]
-  -save_iter              [100]
-  -output_image           [out.png]
-  -deepdream_num_iter     [50]
-  -deepdream_num_octave   [6]
-  -deepdream_octave_scale [1.4]
-  -deepdream_end_layer    [32]
-  -deepdream_clip         [true]
-  -style_scale            [1]
-  -pooling                max|avg [max]
-  -proto_file             [models/VGG_ILSVRC_19_layers_deploy.prototxt]
-  -model_file             [models/VGG_ILSVRC_19_layers.caffemodel]
-  -backend                nn|cudnn [nn]
+dream-art(master*)$ ./deepdream.lua -help
+-content_image Content target image [examples/inputs/tubingen.jpg]
+-gpu           Zero-indexed ID of the GPU to use; for CPU mode set -gpu = -1 [0]
+-num_iter      [100]
+-num_octave    [8]
+-octave_scale  [1.4]
+-end_layer     [32]
+-clip          [true]
+-proto_file    [models/VGG_ILSVRC_19_layers_deploy.prototxt]
+-model_file    [models/VGG_ILSVRC_19_layers.caffemodel]
+-backend       nn|cudnn [nn]
+-output_image  [out.png]
+```
+
+```
+dream-art(master*)$ ./neural-style.lua -help
+-style_image    Style target image [examples/inputs/seated-nude.jpg]
+-content_image  Content target image [examples/inputs/tubingen.jpg]
+-image_size     Maximum height / width of generated image [512]
+-gpu            Zero-indexed ID of the GPU to use; for CPU mode set -gpu = -1 [0]
+-content_weight [5]
+-style_weight   [100]
+-tv_weight      [0.001]
+-num_iterations [1000]
+-init           random|image [random]
+-print_iter     [50]
+-save_iter      [100]
+-output_image   [out.png]
+-style_scale    [1]
+-pooling        max|avg [max]
+-proto_file     [models/VGG_ILSVRC_19_layers_deploy.prototxt]
+-model_file     [models/VGG_ILSVRC_19_layers.caffemodel]
+-backend        nn|cudnn [nn]
 ```
 
 # Other Q&A
 
 + **How long does it take to process a single image?**
-  About 10 minutes with a Tesla K40.
+  About 20 minutes with a Tesla K40.
 + **How much memory does this use?**
   This depends on the neural network model and image size.
   On average, 4GB.
