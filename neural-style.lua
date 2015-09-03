@@ -11,7 +11,6 @@ require 'optim'
 torch.setdefaulttensortype('torch.DoubleTensor')
 
 local loadcaffe_wrap = require 'loadcaffe_wrapper'
-local deepdream = require 'deepdream'
 
 --------------------------------------------------------------------------------
 
@@ -36,13 +35,6 @@ cmd:option('-init', 'random', 'random|image')
 cmd:option('-print_iter', 50)
 cmd:option('-save_iter', 100)
 cmd:option('-output_image', 'out.png')
-
--- DeepDream options
-cmd:option('-deepdream_num_iter', 50)
-cmd:option('-deepdream_num_octave', 6)
-cmd:option('-deepdream_octave_scale', 1.4)
-cmd:option('-deepdream_end_layer', 32)
-cmd:option('-deepdream_clip', true)
 
 -- Other options
 cmd:option('-style_scale', 1.0)
@@ -72,15 +64,8 @@ local function main(params)
   end
 
   local content_image = grayscale_to_rgb(image.load(params.content_image))
-  local deepdream_image = deepdream.deepdream(cnn, content_image, is_cuda,
-                                              params.deepdream_num_iter,
-                                              params.deepdream_num_octave,
-                                              params.deepdream_octave_scale,
-                                              params.deepdream_end_layer,
-                                              params.deepdream_clip)
-  deepdream_image = image.scale(deepdream_image, params.image_size, 'bilinear')
-  image.save(build_filename(params.output_image, 'deepdream'), deepdream_image)
-  local deepdream_image_caffe = preprocess(deepdream_image):float()
+  content_image = image.scale(content_image, params.image_size, 'bilinear')
+  local content_image_caffe = preprocess(content_image):float()
 
   local style_image = grayscale_to_rgb(image.load(params.style_image))
   local style_size = math.ceil(params.style_scale * params.image_size)
@@ -88,7 +73,7 @@ local function main(params)
   local style_image_caffe = preprocess(style_image):float()
 
   if params.gpu >= 0 then
-    deepdream_image_caffe = deepdream_image_caffe:cuda()
+    content_image_caffe = content_image_caffe:cuda()
     style_image_caffe = style_image_caffe:cuda()
   end
 
@@ -126,7 +111,7 @@ local function main(params)
         net:add(layer)
       end
       if i == content_layers[next_content_idx] then
-        local target = net:forward(deepdream_image_caffe):clone()
+        local target = net:forward(content_image_caffe):clone()
         local loss_module = nn.ContentLoss(params.content_weight, target):float()
         if params.gpu >= 0 then
           loss_module:cuda()
@@ -158,9 +143,9 @@ local function main(params)
   -- Initialize the image
   local img = nil
   if params.init == 'random' then
-    img = torch.randn(deepdream_image:size()):float():mul(0.001)
+    img = torch.randn(content_image:size()):float():mul(0.001)
   elseif params.init == 'image' then
-    img = deepdream_image_caffe:clone():float()
+    img = content_image_caffe:clone():float()
   else
     error('Invalid init type')
   end

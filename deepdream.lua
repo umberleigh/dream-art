@@ -1,10 +1,79 @@
+#!/usr/bin/env th
 -- Original by @eladhoffer at https://github.com/eladhoffer/DeepDream.torch.
 -- Modifications by @bamos at https://github.com/bamos/dream-art.
 -- Both licensed under the MIT license.
 
+require 'torch'
+require 'nn'
+require 'image'
+require 'optim'
+
+torch.setdefaulttensortype('torch.DoubleTensor')
+
+local loadcaffe_wrap = require 'loadcaffe_wrapper'
+
+--------------------------------------------------------------------------------
+
+local cmd = torch.CmdLine()
+
+-- Basic options
+cmd:option('-content_image', 'examples/inputs/tubingen.jpg',
+           'Content target image')
+cmd:option('-gpu', 0, 'Zero-indexed ID of the GPU to use; for CPU mode set -gpu = -1')
+
+-- DeepDream options
+cmd:option('-num_iter', 100)
+cmd:option('-num_octave', 8)
+cmd:option('-octave_scale', 1.4)
+cmd:option('-end_layer', 32)
+cmd:option('-clip', true)
+
+-- Other options
+cmd:option('-proto_file', 'models/VGG_ILSVRC_19_layers_deploy.prototxt')
+cmd:option('-model_file', 'models/VGG_ILSVRC_19_layers.caffemodel')
+cmd:option('-backend', 'nn', 'nn|cudnn')
+cmd:option('-output_image', 'out.png')
+
 local Normalization = {mean = 118.380948/255, std = 61.896913/255}
 
-local M = {}
+function main(params)
+   if params.gpu >= 0 then
+      require 'cutorch'
+      require 'cunn'
+      cutorch.setDevice(params.gpu + 1)
+   else
+      params.backend = 'nn-cpu'
+   end
+
+   if params.backend == 'cudnn' then
+      require 'cudnn'
+   end
+
+   local cnn = loadcaffe_wrap.load(params.proto_file, params.model_file, params.backend):float()
+   local is_cuda = params.gpu >= 0
+   if is_cuda then
+      cnn:cuda()
+   end
+
+   local content_image = grayscale_to_rgb(image.load(params.content_image))
+   deepdream_image = deepdream(cnn, content_image, is_cuda,
+                               params.num_iter,
+                               params.num_octave,
+                               params.octave_scale,
+                               params.end_layer,
+                               params.clip)
+   image.save(params.output_image, deepdream_image)
+end
+
+-- From neural-style.lua
+function grayscale_to_rgb(img)
+  local c, h, w = img:size(1), img:size(2), img:size(3)
+  if c == 1 then
+    return img:expand(3, h, w):contiguous()
+  else
+    return img
+  end
+end
 
 function reduceNet(full_net,end_layer)
    local net = nn.Sequential()
@@ -43,7 +112,7 @@ function make_step(net, img, is_cuda, clip, step_size, jitter)
    return img
 end
 
-function M.deepdream(net, base_img, is_cuda, iter_n, octave_n, octave_scale,
+function deepdream(net, base_img, is_cuda, iter_n, octave_n, octave_scale,
                      end_layer, clip)
    local iter_n = iter_n or 10
    local octave_n = octave_n or 4
@@ -86,4 +155,5 @@ function M.deepdream(net, base_img, is_cuda, iter_n, octave_n, octave_scale,
    return src
 end
 
-return M
+local params = cmd:parse(arg)
+main(params)
