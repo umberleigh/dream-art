@@ -49,13 +49,13 @@ function main(params)
       require 'cudnn'
    end
 
-   local cnn = loadcaffe_wrap.load(params.proto_file, params.model_file, params.backend):float()
+   local cnn = loadcaffe_wrap.load(params.proto_file, params.model_file, params.backend):double()
    local is_cuda = params.gpu >= 0
    if is_cuda then
       cnn:cuda()
    end
 
-   local content_image = grayscale_to_rgb(image.load(params.content_image))
+   local content_image = preprocess(grayscale_to_rgb(image.load(params.content_image))):double()
    deepdream_image = deepdream(cnn, content_image, is_cuda,
                                params.num_iter,
                                params.num_octave,
@@ -73,6 +73,20 @@ function grayscale_to_rgb(img)
   else
     return img
   end
+end
+
+
+-- From neural-style.lua
+-- Preprocess an image before passing it to a Caffe model.
+-- We need to rescale from [0, 1] to [0, 255], convert from RGB to BGR,
+-- and subtract the mean pixel.
+function preprocess(img)
+  local mean_pixel = torch.DoubleTensor({103.939, 116.779, 123.68})
+  local perm = torch.LongTensor{3, 2, 1}
+  img = img:index(1, perm):mul(256.0)
+  mean_pixel = mean_pixel:view(3, 1, 1):expandAs(img)
+  img:add(-1, mean_pixel)
+  return img
 end
 
 function reduceNet(full_net,end_layer)
