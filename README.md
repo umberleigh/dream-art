@@ -98,6 +98,19 @@ When they do, this repository will be obsolete, but until then,
 this repository glues them together.
 
 # Setup
+
+## With Docker
+
+**Note: In progress!** Please follow [this issue](https://github.com/bamos/dream-art/issues/1).
+
+DreamArt can be deployed as a container with [Docker](https://www.docker.com/)
+for CPU mode:
+
+```
+docker build -t dream-art .
+```
+
+## By hand
 The following is from [jcjohnson/neural-style][neural-style].
 
 Dependencies:
@@ -171,10 +184,14 @@ dream-art(master*)$ ./neural-style.lua -help
 # Other Q&A
 
 + **How long does it take to process a single image?**
-  About 20 minutes with a Tesla K40.
+  This depends on the neural network model, image size,
+  and number of iterations.
+  On average, DeepDream takes about 5 minutes and
+  the art takes about 15 minutes on a GPU.
 + **How much memory does this use?**
-  This depends on the neural network model and image size.
-  On average, 4GB.
+  This also depends on the neural network model, image size,
+  and number of iterations.
+  On average, both consume about 4GB of memory.
 
 # Licensing
 
