@@ -115,6 +115,9 @@ cd /dream-art
 ./neural-style.lua -gpu -1 -content_image ./golden_gate_deepdream.png -style_image ./examples/inputs/starry_night.jpg -output_image golden_gate_deepdream_starry.png
 ```
 
+To use, place your images in `dream-art` on your host and
+access them from the shared Docker directory.
+
 ## By hand
 The following is from [jcjohnson/neural-style][neural-style].
 
@@ -126,14 +129,6 @@ Optional dependencies:
 * CUDA 6.5+
 * [cudnn.torch](https://github.com/soumith/cudnn.torch)
 
-**NOTE**: If your machine does not have CUDA installed, then you may
-  need to install loadcaffe manually like this:
-```
-git clone https://github.com/szagoruyko/loadcaffe.git
-# Edit the file loadcaffe/loadcaffe-1.0-0.rockspec
-# Delete lines 21 and 22 that mention cunn and inn
-luarocks install loadcaffe/loadcaffe-1.0-0.rockspec
-```
 After installing dependencies, you'll need to run the following script
 to download the VGG model:
 ```
