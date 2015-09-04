@@ -99,6 +99,8 @@ this repository glues them together.
 
 # Setup
 
+**Warning: CPU mode is not working. Please subscribe to [this issue](https://github.com/bamos/dream-art/issues/2)**
+
 ## With Docker
 
 **Note: In progress!** Please follow [this issue](https://github.com/bamos/dream-art/issues/1).
