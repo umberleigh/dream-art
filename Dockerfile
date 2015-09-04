@@ -7,9 +7,9 @@ RUN curl -s https://raw.githubusercontent.com/torch/ezinstall/master/install-dep
 RUN git clone https://github.com/torch/distro.git ~/torch --recursive
 RUN cd ~/torch && ./install.sh
 
-RUN luarocks install nn
-RUN luarocks install image
-RUN luarocks install optim
+RUN ~/torch/install/bin/luarocks install nn
+RUN ~/torch/install/bin/luarocks install image
+RUN ~/torch/install/bin/luarocks install optim
 
-# Build without GPU libraries.
-#RUN git clone git clone https://github.com/szagoruyko/loadcaffe.git
+RUN apt-get install -y libprotobuf-dev protobuf-compiler
+RUN ~/torch/install/bin/luarocks install loadcaffe
