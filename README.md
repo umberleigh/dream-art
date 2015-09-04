@@ -101,13 +101,17 @@ this repository glues them together.
 
 ## With Docker
 
-**Note: In progress!** Please follow [this issue](https://github.com/bamos/dream-art/issues/1).
-
 DreamArt can be deployed as a container with [Docker](https://www.docker.com/)
 for CPU mode:
 
 ```
-docker build -t dream-art .
+./models/download_models.sh
+sudo docker build -t dream-art .
+sudo docker run -t -i -v $PWD:/dream-art dream-art /bin/bash
+cd /dream-art
+./deepdream.lua -gpu -1 -content_image ./examples/inputs/golden_gate.jpg -output_image golden_gate_deepdream.png
+./
+./neural-style.lua -gpu -1 -content_image ./golden_gate_deepdream.png -style_image ./examples/inputs/starry_night.jpg -output_image golden_gate_deepdream_starry.png
 ```
 
 ## By hand
