@@ -95,7 +95,8 @@ Ideally, both of these implementations should ship on [luarocks](https://luarock
 and provide a command-line interface and library that
 nicely load the models.
 When they do, this repository will be obsolete, but until then,
-this repository glues them together.
+this repository glues them together and provides a Dockerfile to
+simplify deployment.
 
 # Setup
 
