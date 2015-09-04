@@ -36,15 +36,16 @@ See [the gallery](/gallery.md) for more examples.
 
 # Brad Pitt
 ## Original
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/brad_pitt.jpg" height=300px>
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/brad_pitt.jpg" height="300px">
 
 ## DeepDream
-<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/brad_pitt_deepdream.png" height=300px>
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/brad_pitt_deepdream.png" height="300px">
 
-## TODO
-TODO
+## Picasso's Self Portrait
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/inputs/picasso_selfport1907.jpg" height="300px">
 
-## DeepDream with TODO
+## DeepDream with Picasso's Style
+<img src="https://raw.githubusercontent.com/bamos/dream-art/master/examples/outputs/brad_pitt_picasso_deepdream.png" height="300px">
 
 # How can I use this on my images without downloading anything?
 
