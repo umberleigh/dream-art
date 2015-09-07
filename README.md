@@ -104,11 +104,21 @@ this repository glues them together and provides a Dockerfile to
 simplify deployment.
 
 # Setup
+Some portions below are from [jcjohnson/neural-style][neural-style].
 
 ## Check out git submodules
-
 Clone with `--recursive` or run `git submodule init && git submodule update`
 after checking out.
+
+## Download the VGG Model
+Run `./models/download_models.sh` to download the original
+[VGG-19 model](https://gist.github.com/ksimonyan/3785162f95cd2d5fee77#file-readme-md).
+Leon Gatys has graciously provided the modified version of the VGG-19
+model that was used in their paper;
+this will also be downloaded.
+By default the original VGG-19 model is used.
+
+This model is shared between the DeepDream and NeuralStyle models.
 
 ## With Docker
 
@@ -121,16 +131,13 @@ sudo docker build -t dream-art .
 sudo docker run -t -i -v $PWD:/dream-art dream-art /bin/bash
 cd /dream-art
 ./deepdream.lua -gpu -1 -content_image ./examples/inputs/golden_gate.jpg -output_image golden_gate_deepdream.png
-./
-./neural-style.lua -gpu -1 -content_image ./golden_gate_deepdream.png -style_image ./examples/inputs/starry_night.jpg -output_image golden_gate_deepdream_starry.png
+./neural-style.sh -gpu -1 -content_image ./golden_gate_deepdream.png -style_image ./examples/inputs/starry_night.jpg -output_image golden_gate_deepdream_starry.png
 ```
 
 To use, place your images in `dream-art` on your host and
 access them from the shared Docker directory.
 
 ## By hand
-The following is from [jcjohnson/neural-style][neural-style].
-
 Dependencies:
 * [torch7](https://github.com/torch/torch7)
 * [loadcaffe](https://github.com/szagoruyko/loadcaffe)
@@ -139,21 +146,9 @@ Optional dependencies:
 * CUDA 6.5+
 * [cudnn.torch](https://github.com/soumith/cudnn.torch)
 
-After installing dependencies, you'll need to run the following script
-to download the VGG model:
-```
-sh models/download_models.sh
-```
-This will download the original
-[VGG-19 model](https://gist.github.com/ksimonyan/3785162f95cd2d5fee77#file-readme-md).
-Leon Gatys has graciously provided the modified version of the VGG-19
-model that was used in their paper;
-this will also be downloaded.
-By default the original VGG-19 model is used.
-
 # Usage
 
-See `th deepdream.lua -help` and `th neural-style.lua -help` for the most updated docs.
+See `th deepdream.lua -help` and `th neural-style.sh -help` for the most updated docs.
 
 ```
 dream-art(master*)$ ./deepdream.lua -help
@@ -171,7 +166,7 @@ dream-art(master*)$ ./deepdream.lua -help
 ```
 
 ```
-dream-art(master*)$ ./neural-style.lua -help
+dream-art(master*)$ ./neural-style.sh -help
 -style_image    Style target image [examples/inputs/seated-nude.jpg]
 -content_image  Content target image [examples/inputs/tubingen.jpg]
 -image_size     Maximum height / width of generated image [512]
