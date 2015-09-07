@@ -1,7 +1,12 @@
 # Dream Art
 
-Dream Art combines [inceptionism/DeepDream][inceptionism] with
-"[A Neural Algorithm of Artistic Style][neural-art-arxiv]."
+This repository provides a Dockerfile to run [inceptionism/DeepDream][inceptionism]
+and "[A Neural Algorithm of Artistic Style][neural-art-arxiv]" with
+the following repositories.
+
++ [jcjohnson/neural-style][neural-style]
++ [eladhoffer/DeepDream.torch][DeepDream.torch]
+
 The following examples were created with [create-outputs.sh](/create-outputs.sh)
 and show an input content image followed by the DeepDream content image,
 and then pairs of input artistic styles and
@@ -99,6 +104,11 @@ this repository glues them together and provides a Dockerfile to
 simplify deployment.
 
 # Setup
+
+## Check out git submodules
+
+Clone with `--recursive` or run `git submodule init && git submodule update`
+after checking out.
 
 ## With Docker
 
