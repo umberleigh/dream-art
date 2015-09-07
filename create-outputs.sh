@@ -6,7 +6,7 @@ cd "$(dirname "$0")"
 
 # Usage: produceStyle <style image> <deep dream image> <output image>
 produceStyle() {
-  ./neural-style.lua \
+  ./neural-style.sh \
     -style_image examples/inputs/$1.jpg \
     -content_image examples/outputs/$2 \
     -backend cudnn \
