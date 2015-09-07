@@ -218,7 +218,7 @@ Modifications remain under the original license.
 [deepdream]: https://github.com/google/deepdream
 [DeepDream.torch]: https://github.com/eladhoffer/DeepDream.torch
 
-[neural-art-arxiv]: http://arxiv.org/abs/1508.06576)
+[neural-art-arxiv]: http://arxiv.org/abs/1508.06576
 [neural-style]: https://github.com/jcjohnson/neural-style
 [neural-art]: https://github.com/kaishengtai/neuralart
 
