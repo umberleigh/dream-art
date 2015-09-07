@@ -148,7 +148,7 @@ Optional dependencies:
 
 # Usage
 
-See `th deepdream.lua -help` and `th neural-style.sh -help` for the most updated docs.
+See `./deepdream.lua -help` and `./neural-style.sh -help` for the most updated docs.
 
 ```
 dream-art(master*)$ ./deepdream.lua -help
