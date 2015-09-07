@@ -15,10 +15,10 @@ produceStyle() {
 
 # Usage: produceOutputs <content image>
 produceOutputs() {
-  ./deepdream.lua \
-    -backend cudnn \
-    -content_image examples/inputs/$1.jpg \
-    -output_image examples/outputs/$1_deepdream.png
+  # ./deepdream.lua \
+  #   -backend cudnn \
+  #   -content_image examples/inputs/$1.jpg \
+  #   -output_image examples/outputs/$1_deepdream.png
   produceStyle escher_sphere $1_deepdream.png $1_escher
   produceStyle frida_kahlo $1_deepdream.png $1_kahlo
   produceStyle woman-with-hat-matisse $1_deepdream.png $1_matisse
