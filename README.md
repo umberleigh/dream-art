@@ -118,7 +118,7 @@ model that was used in their paper;
 this will also be downloaded.
 By default the original VGG-19 model is used.
 
-This model is shared between the DeepDream and NeuralStyle models.
+This model is shared between DeepDream and NeuralStyle.
 
 ## With Docker
 
@@ -211,7 +211,7 @@ Modifications remain under the original license.
 | Project | Modified | License |
 |---|---|---|
 | [DeepDream.torch] | Yes | MIT
-| [jcjohnson/neural-style][neural-style] | Yes | MIT
+| [jcjohnson/neural-style][neural-style] | No | MIT
 
 
 [inceptionism]: http://googleresearch.blogspot.ch/2015/06/inceptionism-going-deeper-into-neural.html
