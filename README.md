@@ -130,7 +130,7 @@ for CPU mode:
 sudo docker build -t dream-art .
 sudo docker run -t -i -v $PWD:/dream-art dream-art /bin/bash
 cd /dream-art
-./deepdream.lua -gpu -1 -content_image ./examples/inputs/golden_gate.jpg -output_image golden_gate_deepdream.png
+th ./deepdream.lua -gpu -1 -content_image ./examples/inputs/golden_gate.jpg -output_image golden_gate_deepdream.png
 ./neural-style.sh -gpu -1 -content_image ./golden_gate_deepdream.png -style_image ./examples/inputs/starry_night.jpg -output_image golden_gate_deepdream_starry.png
 ```
 
